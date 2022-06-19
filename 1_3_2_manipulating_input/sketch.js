@@ -1,5 +1,5 @@
 /* 
-  A simple P%js sketch that takes the input from the user, and reverse 
+  A simple P5js sketch that takes the input from the user, and reverse 
   and show it back to the user.
 
   Made as part of the Coding Train's Programming with Text playlist first video, 
