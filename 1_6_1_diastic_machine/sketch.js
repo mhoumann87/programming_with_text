@@ -71,6 +71,7 @@ function setup() {
   // Get the elements on the page
   const seedPhrase = select('#seed-phrase');
   const btn = select('#submit');
+  const output = select('#poem');
   // Set a p5 event listener on the button
   btn.mousePressed(() => {
     // Anonymous function to handle the seed phrase

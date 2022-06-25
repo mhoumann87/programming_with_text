@@ -15,65 +15,68 @@
   </head>
   <body>
     <h1>Diastic Machine</h1>
-    <p>
-      This page takes inspiration from
-      <a
-        href="https://en.wikipedia.org/wiki/Jackson_Mac_Low"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Jackson Mac Low</a
-      >'s Diastic Technique.
-    </p>
+    <section class="info">
+      <p>
+        This page takes inspiration from
+        <a
+          href="https://en.wikipedia.org/wiki/Jackson_Mac_Low"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Jackson Mac Low</a
+        >'s Diastic Technique.
+      </p>
 
-    <p>
-      A simple explanation, if possible, of the technique, requires a lengthy
-      text and a seed phrase like this:
-    </p>
+      <p>
+        A simple explanation, if possible, of the technique, requires a lengthy
+        text and a seed phrase like this:
+      </p>
 
-    <p>Base text:</p>
-    <figure>
-      <blockquote cite="https://www.gutenberg.org/ebooks/68366">
-        <p>
-          Doomed to pleasant disappointment, however, were such good folks of
-          Shorehaven as anticipated any spectacular ill-conduct that evening on
-          the part of the returned crew. Before the rope fender of the
-          despicable “Jane Gladys” had rubbed the sides of the quay for five
-          minutes, an atmosphere of heavy gloom had settled upon the hardy
-          mariners who peopled her, and this though they had arrived in port in
-          the best of spirits, and were, moreover, furnished with several
-          half-formulated plans of campaign which only awaited the inspiration
-          of environment to touch success in the form of financial or liquid
-          bonuses.
-        </p>
-      </blockquote>
-      <figcaption>
-        - F. Morton Howard, <cite>Strictly Business</cite>
-      </figcaption>
-    </figure>
+      <p>Base text:</p>
+      <figure>
+        <blockquote cite="https://www.gutenberg.org/ebooks/68366">
+          <p>
+            Doomed to pleasant disappointment, however, were such good folks of
+            Shorehaven as anticipated any spectacular ill-conduct that evening
+            on the part of the returned crew. Before the rope fender of the
+            despicable “Jane Gladys” had rubbed the sides of the quay for five
+            minutes, an atmosphere of heavy gloom had settled upon the hardy
+            mariners who peopled her, and this though they had arrived in port
+            in the best of spirits, and were, moreover, furnished with several
+            half-formulated plans of campaign which only awaited the inspiration
+            of environment to touch success in the form of financial or liquid
+            bonuses.
+          </p>
+        </blockquote>
+        <figcaption>
+          - F. Morton Howard, <cite>Strictly Business</cite>
+        </figcaption>
+      </figure>
 
-    <p>Then we need a seed phrase, we'll take an easy one: "cat".</p>
+      <p>Then we need a seed phrase, we'll take an easy one: "cat".</p>
 
-    <p>
-      Now we read the base text, and find the first word starting with 'c',
-      crew. Then we start over and find the first word with 'a' as second
-      letter, part. And start again with 't' as third letter, anticipated.
-    </p>
+      <p>
+        Now we read the base text, and find the first word starting with 'c',
+        crew. Then we start over and find the first word with 'a' as second
+        letter, part. And start again with 't' as third letter, anticipated.
+      </p>
 
-    <p>And now we have our "poem": Crew part anticipated.</p>
+      <p>And now we have our "poem": Crew part anticipated.</p>
 
-    <p>
-      Can be done like this, the good old fashioned way, but we have a computer,
-      so why not use that.
-    </p>
+      <p>
+        Can be done like this, the good old fashioned way, but we have a
+        computer, so why not use that.
+      </p>
 
-    <p>
-      You can supply your own base text, dropping it in the page, or use the one
-      we have supplied, chapter one of Alice's Adventures in Wonderland.
-    </p>
+      <p>
+        You can supply your own base text, dropping it in the page, or use the
+        one we have supplied, chapter one of Alice's Adventures in Wonderland.
+      </p>
 
-    <p>
-      You also have to provide a seed phrase, by writing is in the input field.
-    </p>
+      <p>
+        You also have to provide a seed phrase, by writing is in the input
+        field.
+      </p>
+    </section>
 
     <label for="seed-phrase"
       >Please input your seed phrase:
@@ -81,5 +84,8 @@
       <br />
       <button id="submit">Submit Seed Phrase</button>
     </label>
+    <div class="result">
+      <p id="poem"></p>
+    </div>
   </body>
 </html>
