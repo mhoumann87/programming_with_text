@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diastic Machine</title>
+    <link rel="stylesheet" href="./styles.css" />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"
       integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw=="
@@ -13,79 +14,106 @@
     ></script>
     <script defer src="sketch.js"></script>
   </head>
-  <body>
-    <h1>Diastic Machine</h1>
-    <section class="info">
-      <p>
-        This page takes inspiration from
-        <a
-          href="https://en.wikipedia.org/wiki/Jackson_Mac_Low"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Jackson Mac Low</a
-        >'s Diastic Technique.
-      </p>
+  <body class="grid">
+    <a href="#main" class="skip-to-content">Skip to main content</a>
 
-      <p>
-        A simple explanation, if possible, of the technique, requires a lengthy
-        text and a seed phrase like this:
-      </p>
+    <!--     <section class="top-bar">
+      <div class="top-bar__content container flex">
+        <h2 class="logo">michael-h.dk</h2>
 
-      <p>Base text:</p>
-      <figure>
-        <blockquote cite="https://www.gutenberg.org/ebooks/68366">
-          <p>
-            Doomed to pleasant disappointment, however, were such good folks of
-            Shorehaven as anticipated any spectacular ill-conduct that evening
-            on the part of the returned crew. Before the rope fender of the
-            despicable “Jane Gladys” had rubbed the sides of the quay for five
-            minutes, an atmosphere of heavy gloom had settled upon the hardy
-            mariners who peopled her, and this though they had arrived in port
-            in the best of spirits, and were, moreover, furnished with several
-            half-formulated plans of campaign which only awaited the inspiration
-            of environment to touch success in the form of financial or liquid
-            bonuses.
-          </p>
-        </blockquote>
-        <figcaption>
-          - F. Morton Howard, <cite>Strictly Business</cite>
-        </figcaption>
-      </figure>
+        <nav role="primary navigation">
+          <ul class="flex">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section> -->
 
-      <p>Then we need a seed phrase, we'll take an easy one: "cat".</p>
-
-      <p>
-        Now we read the base text, and find the first word starting with 'c',
-        crew. Then we start over and find the first word with 'a' as second
-        letter, part. And start again with 't' as third letter, anticipated.
-      </p>
-
-      <p>And now we have our "poem": Crew part anticipated.</p>
-
-      <p>
-        Can be done like this, the good old fashioned way, but we have a
-        computer, so why not use that.
-      </p>
-
-      <p>
-        You can supply your own base text, dropping it in the page, or use the
-        one we have supplied, chapter one of Alice's Adventures in Wonderland.
-      </p>
-
-      <p>
-        You also have to provide a seed phrase, by writing is in the input
-        field.
-      </p>
-    </section>
-
-    <label for="seed-phrase"
-      >Please input your seed phrase:
-      <input type="text" name="seed-phrase" id="seed-phrase" />
-      <br />
-      <button id="submit">Submit Seed Phrase</button>
-    </label>
-    <div class="result">
-      <p id="poem"></p>
+    <div class="hero">
+      <div class="text-box">
+        <h1>Diastic Machine</h1>
+      </div>
     </div>
+
+    <main>
+      <section class="info">
+        <p>
+          This page takes inspiration from
+          <a
+            href="https://en.wikipedia.org/wiki/Jackson_Mac_Low"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Jackson Mac Low</a
+          >'s Diastic Technique.
+        </p>
+
+        <p>
+          A simple explanation, if possible, of the technique, requires a
+          lengthy text and a seed phrase like this:
+        </p>
+
+        <p>Base text:</p>
+        <figure>
+          <blockquote
+            cite="https://www.gutenberg.org/files/68407/68407-h/68407-h.htm"
+          >
+            <p>
+              Do you see her now, Mr. David?” I nodded, pointing into the coals.
+              “I see a lion, and an old witch, and a monkey. I don't see any
+              woman.” “There! There!” I cried. “She's just going through the
+              postern gate. Oh, she's gone, lad! Never mind! Next time you may
+              see her.” “And is she prettier'n Wanza, Mr. David?” “Perhaps not
+              prettier,” I responded. “Wanza looking out from beneath the
+              pink-lined umbrella on her peddler's cart is very charming,
+              indeed. But the woman I see in the fire is—oh, she's altogether
+              different!”
+            </p>
+          </blockquote>
+          <figcaption>
+            - Mae Van Norman Long, <cite>The Wonder Woman</cite>
+          </figcaption>
+        </figure>
+
+        <p>Then we need a seed phrase, we'll take an easy one: "cat".</p>
+
+        <p>
+          Now we read the base text, and find the first word starting with 'c',
+          'coals'. <br />
+          Then we start over, from the first word after 'coals', and find the
+          first word with 'a' as second letter, 'lad'. <br />
+          And start again, after 'lad', with 't' as third letter, altogether.
+        </p>
+
+        <p>And now we have our "poem": coals lad altogether.</p>
+
+        <p>
+          Can be done like this, the good old fashioned way, but we have a
+          computer, so why not use that.
+        </p>
+
+        <p>
+          You can supply your own base text, dropping it in the page, or use the
+          one we have supplied, chapter one of Alice's Adventures in Wonderland.
+        </p>
+
+        <p>
+          You also have to provide a seed phrase, by writing is in the input
+          field.
+        </p>
+      </section>
+
+      <label for="seed-phrase"
+        >Please input your seed phrase:
+        <input type="text" name="seed-phrase" id="seed-phrase" />
+        <br />
+        <button id="submit">Submit Seed Phrase</button>
+      </label>
+      <div class="result">
+        <p id="poem"></p>
+      </div>
+    </main>
   </body>
 </html>
