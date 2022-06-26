@@ -1,0 +1,2 @@
+# VSCode scss compiler makes a dist directory, that we have no need for
+dist/
