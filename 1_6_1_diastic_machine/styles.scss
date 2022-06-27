@@ -11,6 +11,7 @@
   --clr-text: #011927;
   --clr-links: #049dbf;
   --clr-hover: #04c4d9;
+  --clr-white: #e4e2e2;
 
   /* Fonts */
   --ff-header: 'Anek Malayalam', sans-serif;
@@ -183,7 +184,7 @@ html:focus-within {
 }
 /* Set core body defaults */
 body {
-  --gap: 0;
+  --gap: 2em;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
@@ -264,6 +265,17 @@ h6 {
 
 h5 {
   font-size: var(--fs-small);
+}
+
+a {
+  color: var(--clr-links);
+  text-decoration: none;
+  transition: all 250ms ease-in;
+
+  &:hover,
+  &:focus {
+    color: var(--clr-hover);
+  }
 }
 
 /* =====================================================================
@@ -361,9 +373,112 @@ nav ul {
 
     h1 {
       align-self: end;
-      color: var(--clr-text);
+      color: var(--clr-white);
       line-height: 1;
       margin: 0;
     }
   }
+}
+
+.info {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'text-1'
+    'text-2'
+    'input-box'
+    'result';
+
+  @media screen and (min-width: 75em) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      'text-1 text-2'
+      'input-box input-box'
+      'result result';
+  }
+  .text {
+    max-width: 60ch;
+  }
+
+  .text-1 {
+    grid-area: text-1;
+  }
+
+  .text-2 {
+    grid-area: text-2;
+  }
+
+  .input-box {
+    --gap: 0;
+    grid-area: input-box;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: repeat(2, 1fr);
+
+    label {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+    }
+
+    input {
+      grid-column: 1 / 2;
+      grid-row: 2 / -1;
+      border: 0;
+      background-color: var(--clr-background);
+      border-bottom: 3px solid var(--clr-accent);
+      outline: none;
+      margin-right: 0.75em;
+
+      &:focus {
+        outline: 2px solid var(--clr-accent);
+      }
+    }
+
+    button {
+      grid-column: 2 / -1;
+      grid-row: 2 / -1;
+      padding-inline: 0.85em;
+      border: 0;
+      background: var(--clr-links);
+      color: var(--clr-background);
+      transition: all 250ms ease-in;
+
+      &:hover,
+      &:focus {
+        background-color: var(--clr-hover);
+      }
+    }
+  }
+
+  .result {
+    grid-area: result;
+  }
+}
+
+footer {
+  padding-block: 1em 2em;
+  background-color: var(--clr-accent);
+}
+
+.social {
+  gap: 1.5em;
+
+  svg {
+    width: 2em;
+  }
+}
+
+/* Colors for social icons */
+#github {
+  fill: #181717;
+}
+
+#linkedin {
+  fill: #0a66c2;
+}
+
+#twitter {
+  fill: #1da1f2;
+}
+
+#facebook {
+  fill: #1877f2;
 }

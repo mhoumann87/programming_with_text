@@ -82,6 +82,6 @@ function setup() {
     console.log(seedWord);
     const poem = diastic(seedWord, words);
     //Display the poem on the page
-    createP(poem);
+    output.html(poem);
   });
 }
