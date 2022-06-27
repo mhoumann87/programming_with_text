@@ -1,0 +1,4 @@
+# Don't use git on images
+images/
+# No need to save the css, just compile the scss
+styles.css
