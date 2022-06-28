@@ -1,0 +1,5 @@
+# Remove images
+images/
+
+# remove CSS
+styles.css
