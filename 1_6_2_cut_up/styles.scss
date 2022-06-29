@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&family=Comfortaa:wght@300;400;700&display=swap');
+
+/* =====================================================================
+* Setup custom properties
+=======================================================================*/
+:root {
+  /* Colors */
+  --clr-background: #edf5f4;
+  --clr-accent: #e9b200;
+  --clr-text: #384057;
+  --clr-text-light: #4c8481;
+  --clr-links: #d16a28;
+  --clr-hover: #ff8f4a;
+
+  /* Fonts */
+  --ff-header: 'Comfortaa', cursive;
+  --ff-body: 'Bitter', serif;
+
+  /* Font weights */
+  --fw-thin: 300;
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  /* Font sizes */
+  --fs-xlarge: 3rem;
+  --fs-large: 2.1rem;
+  --fs-medium: 1.5rem;
+  --fs-regular: 1rem;
+  --fs-small: 0.825rem;
+
+  @media screen and (min-width: 50em) {
+    --fs-xlarge: 4.5rem;
+    --fs-large: 2.8rem;
+    --fs-medium: 2rem;
+    --fs-regular: 1.2rem;
+    --fs-small: 0.825rem;
+  }
+}
+
+/* =====================================================================
+  * Resets based on:
+  * https://github.com/jensimmons/cssremedy/blob/master/css/remedy.css
+=======================================================================*/
+/* Use box-sizing for all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Consistant line-sizing, even when inline elements have different line-heights */
+html {
+  line-sizing: normal;
+}
+/* Remove space around the page */
+body {
+  margin: 0;
+}
+/* Maintain 'hidden' behaviour when overriding 'display' values  */
+[hidden] {
+  display: none;
+}
+/* Switch to ram units for headings */
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.17rem;
+}
+h4 {
+  font-size: 1rem;
+}
+h5 {
+  font-size: 0.83rem;
+}
+h6 {
+  font-size: 0.67rem;
+}
+/* Keep h1 margins consistent even when nested */
+h1 {
+  margin: 0;
+}
+
+/*
+  1. We want usually want block displey for these elements
+  2. The 'vertical-align' removes the space below, when display is overridden
+  3. Responsive by default
+  4. Audio without '[controls]' remains hidden by default 
+*/
+img,
+svg {
+  display: block;
+  vertical-align: middle;
+  max-width: 100%;
+}
+/*
+  These new elements display inline by default
+  but that's mpt the expected behaviour for either one.
+  This can interfere with proper layout and aspect-ratio handeling
+  1. Remove the unnassary wrapping 'pichure', while maintaining contents
+  2. Source elements have nothing to display, so we hide them entierly 
+*/
+picture {
+  display: contents;
+}
+source {
+  display: none;
+}
+/* 
+  Maintain intrinsic aspect ration when 'max-width' is applied.
+  'iframe', 'enbed' and 'object' are also embedded, but have no
+  intrinsic ratio, so their height needs to be set explicitly
+*/
+img,
+svg,
+video,
+canvas {
+  height: auto;
+}
+/* 
+  Without ony good reason audio element defaults to 300px and
+  audio files are unlikly to come with a width attribute
+*/
+audio {
+  width: 100%;
+}
+/* 
+  Remove the border inside links in IE 10 and earlier
+*/
+img {
+  border-style: none;
+}
+/* 
+  Hide overflow in IE10 and earlier
+*/
+svg {
+  overflow: hidden;
+}
+/* 
+  Default block display on HTML5 elements.
+*/
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+/* 
+  Add the correct box sizing and remove padding in IE10
+*/
+[type='checkbox'],
+[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+}
+/* 
+  Remove list styles on ul and ol elements with a list role,
+  which suggests default styling will be removed
+*/
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+nav ul,
+nav ol {
+  list-style: none;
+}
+/* Set core root defaults */
+html[focus-within] {
+  scroll-behavior: smooth;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+/* Set core body defaults */
+body {
+  --gap: 2em;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+/* An element that doesn't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+/* Inherit fonts for inputs and butons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* =====================================================================
+* Utillity classes
+======================================================================*/
+.grid {
+  display: grid;
+  gap: var(--gap, 1em);
+}
+
+.flex {
+  display: flex;
+  flex-direction: var(--dir, row);
+  justify-content: var(--justify, space-between);
+  align-items: var(--align, center);
+  gap: var(--gap, 1em);
+}
+
+.container {
+  width: min(100% - 2rem, 100em);
+  margin-inline: auto;
+}
+
+/* =====================================================================
+* Base set-up
+======================================================================*/
+body {
+  grid-template-rows: auto 1fr auto;
+  background-color: var(--clr-background);
+  font-family: var(--ff-body);
+  font-size: var(--fs-regular);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-header);
+  font-weight: var(--fw-thin);
+  line-height: 1;
+}
+
+h1 {
+  font-size: var(--fs-xlarge);
+}
+
+h2 {
+  font-size: var(--fs-large);
+}
+
+h3 {
+  font-size: var(--fs-medium);
+}
+
+h4 {
+  font-family: var(--ff-header);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-regular);
+}
+
+h5,
+h6 {
+  font-family: var(--ff-header);
+  font-weight: var(--fw-bold);
+}
+
+h5 {
+  font-size: var(--fs-small);
+}
+
+a {
+  color: var(--clr-links);
+  text-decoration: none;
+  transition: all 250ms ease-in;
+
+  &:hover,
+  &:focus {
+    color: var(--clr-hover);
+  }
+}
+
+/* =====================================================================
+* Components 
+======================================================================*/
+
+/* Link to mais content only visible when in focus */
+.skip-to-content {
+  position: absolute;
+  z-index: 9999;
+  background-color: var(--clr-accent);
+  color: var(--clr-text);
+  padding: 0.5em 1em;
+  transform: translateY(-100%);
+  transition: transform 250ms ease-in;
+}
+
+.skip-to-content:focus {
+  transform: translateY(0);
+}
+
+.top-bar {
+  background-color: #000;
+}
+
+.top-bar__content {
+  --dir: column;
+  --justify: flex-start;
+
+  h2 {
+    margin: 0;
+    color: #fff;
+  }
+
+  @media screen and (min-width: 50em) {
+    --dir: row;
+    --justify: space-between;
+    --align: center;
+  }
+}
+
+nav ul {
+  --dir: row;
+  --gap: 1em;
+  margin: 0;
+  padding: 0 0 1em 0;
+
+  li a {
+    color: var(--clr-links);
+    font-size: var(--fs-regular);
+    text-decoration: none;
+    transition: all 250ms ease-in;
+
+    &:hover,
+    &:focus {
+      color: var(--clr-hover);
+    }
+  }
+}
+
+/* Footer */
+
+.hero {
+  min-height: 75vh;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+
+  .image {
+    background-image: url('./images/hero-sm.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+
+    @media screen and (min-width: 37.5em) {
+      background-image: url('./images/hero-med.jpg');
+    }
+
+    @media screen and (min-width: 87.5em) {
+      background-image: url('./images/hero-lg.jpg');
+    }
+  }
+
+  .hero__text {
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
+    align-self: center;
+    justify-self: start;
+    color: var(--clr-background);
+
+    span {
+      font-size: calc(var(--fs-xlarge) + 2vw);
+      display: block;
+    }
+  }
+}
+
+footer {
+  background-color: var(--clr-accent);
+  padding-block: 1em 2em;
+}
+
+.social {
+  svg {
+    width: 2rem;
+  }
+}
