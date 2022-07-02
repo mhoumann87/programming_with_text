@@ -8,7 +8,7 @@
   --clr-background: #edf5f4;
   --clr-accent: #e9b200;
   --clr-text: #384057;
-  --clr-text-light: #4c8481;
+  --clr-text-light: rgb(76, 132, 129);
   --clr-links: #d16a28;
   --clr-hover: #ff8f4a;
 
@@ -372,6 +372,14 @@ nav ul {
       font-size: calc(var(--fs-xlarge) + 2vw);
       display: block;
     }
+  }
+}
+
+.main__content {
+  box-shadow: 5px 5px 1px 5px rgb(76, 132, 129, 0.2);
+
+  p {
+    max-width: 60ch;
   }
 }
 
