@@ -90,7 +90,8 @@ h1 {
   4. Audio without '[controls]' remains hidden by default 
 */
 img,
-svg {
+svg,
+iframe {
   display: block;
   vertical-align: middle;
   max-width: 100%;
@@ -116,6 +117,7 @@ source {
 img,
 svg,
 video,
+iframe,
 canvas {
   height: auto;
 }
@@ -377,6 +379,10 @@ nav ul {
 
 .main__content {
   box-shadow: 5px 5px 1px 5px rgb(76, 132, 129, 0.2);
+
+  a {
+    display: block;
+  }
 
   p {
     max-width: 60ch;
