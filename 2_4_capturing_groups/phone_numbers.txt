@@ -1,0 +1,22 @@
+## We now want to search and replace the last 7 digits in the phone numbers ##
+
+These are some american phone numbers 917-XXX-XXXX. Also, you can call me at 646.XXX.XXXX and of course I', always reachable at (212)XXX-XXXX.
+
+
+## Regular expression to search: ##
+
+\(\d{3}[-.)]\d{3}[-.]\d{4} ## this is now group 0 ##
+
+## We now want to keep the area codes, so we isolate the digits with () ##
+\(?(\d{3})[-.)]\d3[-.]\d{4} ## Inside () is now group 1 ##
+
+## We want to keep group 1, but replace anything else ##
+
+$1-XXX-XXXX
+
+## If We want to keep the style of the numbers we have to do it like this: ##
+(?\d{3})([-.)])\d{3}([-.])\d{4} ## Now we have group 1, 2 and 3 to work with ##
+
+$1$2XXX$3XXXX
+
+## Now we have the original format, and the last digits replaced by X ##
