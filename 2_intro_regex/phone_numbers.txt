@@ -1,0 +1,5 @@
+These are some american phone numbers 917-555-1234. Also, you can call me at 646.555.1234 and of course I', always reachable at (212)867-5309.
+
+To search the phone numbers in this text you can search for:
+
+\(?\d{3}[-.)]\d{3}[-.]\d{4}
