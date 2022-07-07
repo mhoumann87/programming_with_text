@@ -26,9 +26,10 @@ Javascript style
 | $        | End of expression    |
 | \b       | Word boundary        |
 
-| Character Classes | Used for                                                           |
-| ----------------- | ------------------------------------------------------------------ |
-| []                | Any chars inside the brackets ie. [-.] will find either a - or a . |
-| [A-Z]             | All capital letters                                                |
-| [a-z]             | All lowercase letters                                              |
-| [A-Za-z]          | All letters                                                        |
+| Character Classes | Used for                                                                |
+| ----------------- | ----------------------------------------------------------------------- |
+| []                | Any chars inside the brackets ie. [-.] will find either a - or a .      |
+| [A-Z]             | All capital letters                                                     |
+| [a-z]             | All lowercase letters                                                   |
+| [A-Za-z]          | All letters                                                             |
+| [ ^A-Z ]          | The ^ will reverse the statement, here everything BUT uppercase letters |
