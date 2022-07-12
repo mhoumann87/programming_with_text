@@ -6,10 +6,9 @@ function setup() {
   noCanvas();
 
   // Connect the elements to the variables
-  input = select("#input");
-  output = select("#output");
-  submit = select("#submit");
-
+  input = select('#input');
+  output = select('#output');
+  submit = select('#submit');
   // Add an eventlistener to the submit button
   submit.mousePressed(handleText);
 }
@@ -20,19 +19,20 @@ const handleText = () => {
   // Split the string into an array, the delimiter is anything not a word or number
   const words = str.split(/(\W+)/);
   console.log(words);
-  // Create a string with for all the words
-  let html = "";
-  // Create a HTML element (span) for each work
-  words.forEach((word) => {
-    if (/\W+/.test(word)) {
-      html += `${word}`;
-    } else {
-      html += `<span class="bg">${word}</span>`;
-    }
-  });
 
-  // Print the text on the page
-  output.html(html);
+  // Get all the words and attach a span to them
+  for (let i = 0; i < words.length; i++) {
+    const span = createSpan(words[i]);
+    span.parent(output);
+
+    if (!/\W+/.test(words[i])) {
+      span.mouseOver(highlight);
+    }
+  }
 
   console.log(words);
+};
+
+const highlight = () => {
+  console.log(this);
 };
